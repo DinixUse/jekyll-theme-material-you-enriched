@@ -1,12 +1,14 @@
-title: Nakyii's Blog
+title: My Blog
 markdown: kramdown
-url: "https://dinixuse.github.io/"
-baseurl: "/blog-nakyii"
+kramdown:
+  hard_wrap: true
+url: "https://yourusername.github.io/"
+baseurl: "/your-blog-name"
 
 # for atom feed
 author:
-  name: Nakyii
-  email: dinix_never@outlook.com
+  name: Your Name
+  email: your.email@example.com
 
 plugins:
   - jemoji

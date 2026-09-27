@@ -1,15 +1,15 @@
-name: Nakyii
-dp: https://github.com/DinixUse.png
+name: Your Name
+dp: https://github.com/yourusername.png
 description: "
   <p>
-    技術力低下，只是什麼都想學一點。
+    A passionate developer who loves to learn new things.
   </p>
 "
-email: dinix_never@outlook.com
+email: your.email@example.com
 contact:
-  - title: bilibili
-    url: https://b23.tv/PVgN80g
+  - title: twitter
+    url: https://twitter.com/yourusername
   - title: github
-    url: https://github.com/DinixUse
+    url: https://github.com/yourusername
   - title: email
-    url: mailto:dinix_never@outlook.com
+    url: mailto:your.email@example.com
