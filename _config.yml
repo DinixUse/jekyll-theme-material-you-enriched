@@ -3,8 +3,8 @@ title: "Material You Enriched"
 description: "A modern Material Design 3 inspired Jekyll theme"
 
 # Please change these
-baseurl: "https://dinixuse.github.io/"
-url: "/jekyll-theme-material-you-enriched/"
+baseurl: "https://dinixuse.github.io"
+url: "/jekyll-theme-material-you-enriched"
 
 # Build settings
 markdown: kramdown
