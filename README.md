@@ -2,7 +2,7 @@
 
 This is the source repository of my personal website.
 
-→ "Visit my blog" (https://yourusername.github.io/your-blog-name/)
+→ "Visit an example " (https://dinixuse.github.io/jekyll-theme-material-you-enriched/)
 
 ## About
 

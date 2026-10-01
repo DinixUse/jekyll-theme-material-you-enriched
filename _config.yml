@@ -2,7 +2,7 @@ title: My Blog
 markdown: kramdown
 kramdown:
   hard_wrap: true
-# url: "https://yourusername.github.io/"
+url: "https://dinixuse.github.io/"
 baseurl: "/jekyll-theme-material-you-enriched"
 
 # for atom feed
