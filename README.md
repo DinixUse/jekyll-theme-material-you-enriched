@@ -1,22 +1,26 @@
-Jekyll Material You Enriched
+# Jekyll Material You Enriched
 
-A customizable Jekyll blog template based on "Jekyll Theme Material You" (https://github.com/sharadcodes/jekyll-theme-material-you) by "Sharad Codes" (https://github.com/sharadcodes/).
+A customizable **Jekyll blog template** based on [Jekyll Theme Material You](https://github.com/sharadcodes/jekyll-theme-material-you) by [Sharad Codes](https://github.com/sharadcodes/).
 
 This project extends the original theme with additional features, customizations, and improvements, while keeping the setup simple enough to use as a starting point for your own personal website or blog.
 
-Screenshots
+## Screenshots
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/DinixUse/jekyll-theme-material-you-enriched/refs/heads/main/screenshots/001.png" alt="Screenshot 001" width="49%">
   <img src="https://raw.githubusercontent.com/DinixUse/jekyll-theme-material-you-enriched/refs/heads/main/screenshots/002.png" alt="Screenshot 002" width="49%">
-</p><p align="center">
+</p>
+
+<p align="center">
   <img src="https://raw.githubusercontent.com/DinixUse/jekyll-theme-material-you-enriched/refs/heads/main/screenshots/003.png" alt="Screenshot 003" width="49%">
   <img src="https://raw.githubusercontent.com/DinixUse/jekyll-theme-material-you-enriched/refs/heads/main/screenshots/004.png" alt="Screenshot 004" width="49%">
-</p>Live Demo
+</p>
 
-→ "View the live demo" (https://dinixuse.github.io/jekyll-theme-material-you-enriched/)
+## Live Demo
 
-Features
+→ **[View the live demo](https://dinixuse.github.io/jekyll-theme-material-you-enriched/)**
+
+## Features
 
 - Material You-inspired interface
 - Jekyll static site generation
@@ -30,32 +34,37 @@ Features
 - Local development with Jekyll
 - Easy to fork and customize
 
-Built With
+## Built With
 
-- "Jekyll" (https://jekyllrb.com/)
+- [Jekyll](https://jekyllrb.com/)
 - Material You Design
-- "GitHub Pages" (https://pages.github.com/)
+- [GitHub Pages](https://pages.github.com/)
 - GitHub Actions
 
-Quick Start
+## Quick Start
 
-1. Use This Template
+### 1. Use This Template
 
 You can either fork this repository or create a new repository from it.
 
+```bash
 git clone https://github.com/DinixUse/jekyll-theme-material-you-enriched.git
 cd jekyll-theme-material-you-enriched
+```
 
-2. Install Dependencies
+### 2. Install Dependencies
 
 Make sure Ruby and Bundler are installed, then run:
 
+```bash
 bundle install
+```
 
-3. Configure Your Site
+### 3. Configure Your Site
 
-Edit "_config.yml":
+Edit `_config.yml`:
 
+```yaml
 title: My Blog
 url: "https://yourusername.github.io/"
 baseurl: "/your-blog-name"
@@ -63,13 +72,17 @@ baseurl: "/your-blog-name"
 author:
   name: Your Name
   email: your.email@example.com
+```
 
 Then configure your author information in:
 
+```text
 _data/author.yml
+```
 
 For example:
 
+```yaml
 name: Your Name
 dp: https://github.com/yourusername.png
 
@@ -90,14 +103,17 @@ contact:
 
   - title: email
     url: mailto:your.email@example.com
+```
 
 Replace the example information with your own.
 
-4. Start Writing
+### 4. Start Writing
 
 Posts are stored in:
 
+```text
 all_collections/_posts/
+```
 
 Create or modify Markdown files there to add your own articles.
 
@@ -105,51 +121,64 @@ You can also replace the example pages included with the template.
 
 If you rename existing pages, remember to update their corresponding links in:
 
+```text
 _includes/sidebar.html
+```
 
-Local Development
+## Local Development
 
 Start the development server with:
 
+```bash
 bundle exec jekyll serve
+```
 
 The site will normally be available at:
 
+```text
 http://localhost:4000
+```
 
 To build the site without starting the development server:
 
+```bash
 bundle exec jekyll build
+```
 
 The generated website will be placed in:
 
+```text
 _site/
+```
 
-GitHub Pages
+## GitHub Pages
 
-This template is designed to work with GitHub Pages and GitHub Actions.
+This template is designed to work with **GitHub Pages and GitHub Actions**.
 
-1. Create Your Repository
+### 1. Create Your Repository
 
 Create a new repository on GitHub and push your customized template:
 
+```bash
 git remote add origin https://github.com/yourusername/your-blog-name.git
 git push -u origin main
+```
 
-2. Enable GitHub Pages
+### 2. Enable GitHub Pages
 
 Go to:
 
-Repository → Settings → Pages
+**Repository → Settings → Pages**
 
 Set the deployment source to:
 
-GitHub Actions
+**GitHub Actions**
 
-3. Deploy
+### 3. Deploy
 
-Once configured, pushing to "main" will trigger the GitHub Actions workflow:
+Once configured, pushing to `main` will trigger the GitHub Actions workflow:
 
+```text
 Push to main
      ↓
 GitHub Actions
@@ -157,59 +186,79 @@ GitHub Actions
 Jekyll build
      ↓
 GitHub Pages
+```
 
 Your site will then be available at:
 
+```text
 https://yourusername.github.io/your-blog-name/
+```
 
 For a user or organization site hosted directly at:
 
+```text
 https://yourusername.github.io/
+```
 
 set:
 
+```yaml
 baseurl: ""
+```
 
-in "_config.yml".
+in `_config.yml`.
 
-Friend Links
+## Friend Links
 
 The template includes support for rendering friend links through:
 
+```text
 _plugins/link_filter.rb
+```
 
 For GitHub Pages deployment, make sure this plugin is available and loaded during the build.
 
-Customization
+## Customization
 
-Theme Colors
+### Theme Colors
 
 Customize the appearance through:
 
+```text
 assets/css/main.css
+```
 
-Social Icons
+### Social Icons
 
 Additional icons can be added to:
 
+```text
 assets/icons/
+```
 
 Then configure the corresponding links in:
 
+```text
 _data/author.yml
+```
 
-Images
+### Images
 
 Place images in:
 
+```text
 assets/images/
+```
 
 Then reference them from your posts:
 
+```markdown
 ![Image description](/assets/images/image.jpg)
+```
 
-Project Structure
+## Project Structure
 
+```text
 .
 ├── _config.yml
 ├── _data/
@@ -228,71 +277,84 @@ Project Structure
 ├── Gemfile
 ├── README.md
 └── ...
+```
 
-Troubleshooting
+## Troubleshooting
 
-Dependencies
+### Dependencies
 
 If dependencies are missing, run:
 
+```bash
 bundle install
+```
 
-If you encounter compatibility problems, check the Ruby version required by the project's "Gemfile".
+If you encounter compatibility problems, check the Ruby version required by the project's `Gemfile`.
 
-Build Errors
+### Build Errors
 
 Run:
 
+```bash
 bundle exec jekyll build
+```
 
 This provides more detailed build output and can help identify configuration or dependency issues.
 
-CSS Not Loading
+### CSS Not Loading
 
 If the site builds but the styles are not loaded correctly:
 
-1. Check "url" and "baseurl" in "_config.yml".
+1. Check `url` and `baseurl` in `_config.yml`.
 2. Make sure they match your GitHub Pages URL.
 3. Clear your browser cache.
-4. Check the generated paths in "_site/".
+4. Check the generated paths in `_site/`.
 
-Broken Links
+### Broken Links
 
 For a project site such as:
 
+```text
 https://yourusername.github.io/your-blog-name/
+```
 
 use:
 
+```yaml
 url: "https://yourusername.github.io/"
 baseurl: "/your-blog-name"
+```
 
 For a user or organization site:
 
+```text
 https://yourusername.github.io/
+```
 
 use:
 
+```yaml
 url: "https://yourusername.github.io/"
 baseurl: ""
+```
 
-Credits
+## Credits
 
 This project is based on:
 
-"Jekyll Theme Material You" (https://github.com/sharadcodes/jekyll-theme-material-you)
-by "Sharad Codes" (https://github.com/sharadcodes/)
+**[Jekyll Theme Material You](https://github.com/sharadcodes/jekyll-theme-material-you)**  
+by **[Sharad Codes](https://github.com/sharadcodes/)**
 
-Template Developer
+### Template Developer
 
-"DinixUse" (https://github.com/DinixUse)
+**[DinixUse](https://github.com/DinixUse)**
 
-License
+## License
 
-This project is derived from Jekyll Theme Material You.
+This project is derived from **Jekyll Theme Material You**.
 
 Please refer to the original project's license for the applicable terms and preserve the original attribution when redistributing modified versions.
 
 ---
 
-Jekyll Material You Enriched · A customizable Jekyll blog template based on Material You.
+**Jekyll Material You Enriched** · A customizable Jekyll blog template based on Material You.
