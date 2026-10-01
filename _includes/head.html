@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/post.css" />
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/syntax.css" />
+  {% if site.reading_progress.enabled %}
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/reading-progress.css" />
+  {% endif %}
   {% else %}
   <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
   {% endif %}
@@ -16,5 +19,13 @@
   <script defer src="{{site.baseurl}}/assets/js/sidebar.js"></script>
   {% if page.layout == "post" %}
   <script defer src="{{site.baseurl}}/assets/js/lbox.js"></script>
+  {% if site.reading_progress.enabled %}
+  <script defer src="{{site.baseurl}}/assets/js/reading-progress.js"></script>
+  <script>
+    window.siteConfig = {
+      reading_progress: {{ site.reading_progress | jsonify }}
+    };
+  </script>
+  {% endif %}
   {% endif %}
 </head>

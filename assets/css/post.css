@@ -48,25 +48,29 @@
 }
 .article-content a {
   position: relative;
+  z-index: 0;                                /* 建立层叠上下文，保证伪元素不会跑到父级背景后面 */
   color: var(--md-sys-color-tertiary);
-  text-decoration: none; /* 去掉默认下划线，避免和伪元素冲突 */
+  text-decoration: none;
+  transition: color 0.25s ease;              /* 文字变色过渡 */
 }
 
 .article-content a::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -2px;              /* 横线与文字的距离，可按需调整 */
-  width: 100%;
-  height: 1px;               /* 横线粗细 */
+  inset: 0;                     /* 覆盖范围，负值让色块比文字略大一圈，可按需调整 */
   background-color: var(--md-sys-color-tertiary);
-  transform: scaleX(0);      /* 默认隐藏 */
-  transform-origin: left;    /* 从左侧展开 */
+  transform: scaleY(0);                      /* 默认高度为 0，不可见 */
+  transform-origin: bottom;                     /* 从顶部开始向下覆盖 */
   transition: transform 0.25s ease;
+  z-index: -1;                               /* 位于文字下方，不遮挡文字 */
+}
+
+.article-content a:hover {
+  color: var(--md-sys-color-on-tertiary);    /* 悬停时文字变为色块上的对比色 */
 }
 
 .article-content a:hover::after {
-  transform: scaleX(1);      /* 悬停时展开 */
+  transform: scaleY(1);                      /* 悬停时向下铺满 */
 }
 .article-content h1 {
   font-size: 2rem;
@@ -185,7 +189,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--md-sys-color-background);
+  background: rgba(0, 0, 0, 0.7);          /* 半透明黑色，0.5 是透明度 */
+  backdrop-filter: blur(16px);             /* 背景模糊 */
+  -webkit-backdrop-filter: blur(16px);     /* Safari 需要加前缀 */
   display: none;
 }
 

@@ -3,6 +3,9 @@
   {% include head.html %}
   <body>
     {% include sidebar.html %}
+    {% if site.reading_progress.enabled and page.layout == "post" %}
+    {% include reading-progress.html %}
+    {% endif %}
     <main class="blogfeed">
       {% include header.html %}
       <section id="article">

@@ -1,0 +1,199 @@
+/* 阅读进度组件样式 */
+#reading-progress {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 100;
+
+  /* 半透明背景（浅色） */
+  background: rgba(255, 255, 255, 0.65);
+  /* 若浏览器支持 color-mix，则基于主题变量生成半透明色 */
+  background: color-mix(in srgb, var(--md-sys-color-surface-1) 65%, transparent);
+
+  /* 背景模糊（毛玻璃） */
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 280px;
+  max-width: 380px;
+  transition: all 0.3s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+#reading-progress.collapsed {
+  transform: translateX(calc(114% - 0px));
+}
+
+.progress-toggle {
+  position: absolute;
+  left: -29px;
+  top: 24%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress-toggle:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.progress-toggle svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.progress-content {
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  /* 保持透明，避免遮挡父级的毛玻璃效果 */
+  background: transparent;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--md-sys-color-outline);
+}
+
+.progress-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-background);
+  margin: 0;
+}
+
+.progress-percentage {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--md-sys-color-primary);
+  background: var(--md-sys-color-primary-container);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6rem;
+  min-width: 45px;
+  text-align: center;
+}
+
+.progress-list {
+  max-height: 320px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-sys-color-primary) var(--md-sys-color-surface-variant);
+}
+
+.progress-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.progress-list::-webkit-scrollbar-track {
+  background: var(--md-sys-color-surface-variant);
+  border-radius: 3px;
+}
+
+.progress-list::-webkit-scrollbar-thumb {
+  background: var(--md-sys-color-primary);
+  border-radius: 3px;
+}
+
+.progress-list::-webkit-scrollbar-thumb:hover {
+  background: var(--md-sys-color-primary);
+}
+
+.progress-item {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem 0;
+  border-radius: 5rem;
+  text-decoration: none;
+  color: var(--md-sys-color-on-surface-variant);
+  transition: all 0.2s ease-in-out;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.progress-item:hover {
+  background: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface);
+}
+
+.progress-item.active {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  font-weight: 700;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  #reading-progress {
+    top: 1rem;
+    right: 1rem;
+    min-width: 240px;
+    max-width: 280px;
+  }
+
+  .progress-content {
+    padding: 1rem;
+  }
+
+  .progress-header h3 {
+    font-size: 1rem;
+  }
+
+  .progress-percentage {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    min-width: 40px;
+  }
+
+  .progress-item {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* 深色模式适配：同样保持半透明 + 模糊，避免覆盖主规则 */
+.dark-theme #reading-progress {
+  background: rgba(28, 28, 30, 0.6);
+  background: color-mix(in srgb, var(--md-sys-color-surface-1) 60%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 平滑滚动动画 */
+.progress-item {
+  transition: all 0.2s cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+/* 加载动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.progress-item {
+  animation: fadeIn 0.3s ease-out;
+}

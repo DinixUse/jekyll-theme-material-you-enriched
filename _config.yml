@@ -1,30 +1,126 @@
-title: My Blog
+# Site settings
+title: "Material You Enriched"
+description: "A modern Material Design 3 inspired Jekyll theme"
+baseurl: ""
+url: ""
+
+# Build settings
 markdown: kramdown
-kramdown:
-  hard_wrap: true
-url: "https://dinixuse.github.io/"
-baseurl: "/jekyll-theme-material-you-enriched"
+highlighter: rouge
+theme: minima
 
-# for atom feed
-author:
-  name: Your Name
-  email: your.email@example.com
-
+# Plugins
 plugins:
-  - jemoji
-  - jekyll-seo-tag
-  - jekyll-sitemap
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-collections_dir: all_collections
-collections:
-  posts:
-    output: true
+# Reading progress settings
+reading_progress:
+  enabled: true
+  position: "top-right"
+  show_percentage: true
+  max_height: "400px"
+  animation_duration: "0.3s"
 
-defaults:
-  - scope:
-      path: "_posts"
-    values:
-      layout: "post"
-      permalink: /posts/:title/
-exclude: ["sitemap.xml", "feed.xml", "LICENSE", "README.md"]
+# Author information
+author:
+  name: "Your Name"
+  description: "Welcome to my blog!"
+  dp: "/assets/images/avatar.png"
+  contact:
+    - title: "GitHub"
+      url: "https://github.com/yourusername"
+    - title: "Twitter"
+      url: "https://twitter.com/yourusername"
+    - title: "Email"
+      url: "mailto:your@email.com"
+
+# Social links
+social_links:
+  - platform: "github"
+    url: "https://github.com/yourusername"
+  - platform: "twitter"
+    url: "https://twitter.com/yourusername"
+  - platform: "linkedin"
+    url: "https://linkedin.com/in/yourusername"
+
+# Theme settings
+theme:
+  primary_color: "#6750A4"
+  secondary_color: "#49454F"
+  tertiary_color: "#625B71"
+  background_color: "#FEF7FF"
+  surface_color: "#FEF7FF"
+  surface_variant_color: "#E7E0EC"
+  on_primary_color: "#FFFFFF"
+  on_secondary_color: "#FFFFFF"
+  on_tertiary_color: "#FFFFFF"
+  on_background_color: "#1C1B1F"
+  on_surface_color: "#1C1B1F"
+  on_surface_variant_color: "#49454F"
+
+# Navigation
+nav_links:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about"
+  - title: "Archive"
+    url: "/archive"
+  - title: "Tags"
+    url: "/tags"
+
+# Footer
+footer:
+  content: "&copy; 2024 Your Name. All rights reserved."
+  show_social: true
+  show_copyright: true
+
+# Blog settings
+blog:
+  show_excerpt: true
+  show_date: true
+  show_categories: true
+  show_tags: true
+  posts_per_page: 10
+
+# SEO settings
+seo:
+  meta_description: "A modern Material Design 3 inspired Jekyll theme"
+  meta_keywords: "jekyll, theme, material design, material you, modern"
+  og_image: "/assets/images/og-image.png"
+
+# Performance settings
+performance:
+  lazy_load_images: true
+  minify_css: true
+  minify_js: true
+  cache_busting: true
+
+# Development settings
+development:
+  show_drafts: false
+  future: false
+  lsi: false
+  excerpt_separator: "\n\n"
+  incremental: false
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .vscode/
+  - .git/
+  - .github/
+  - README.md
+  - LICENSE
+  - CHANGELOG.md
