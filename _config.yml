@@ -2,8 +2,8 @@ title: My Blog
 markdown: kramdown
 kramdown:
   hard_wrap: true
-url: "https://yourusername.github.io/"
-baseurl: "/your-blog-name"
+# url: "https://yourusername.github.io/"
+baseurl: "/jekyll-theme-material-you-enriched"
 
 # for atom feed
 author:
